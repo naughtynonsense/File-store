@@ -27,7 +27,7 @@ CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHAN
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '739667270').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL', '-1001528080426')
-auth_grp = environ.get('AUTH_GROUP')
+auth_grp = environ.get('AUTH_GROUP', '-1001422937091')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
@@ -44,12 +44,12 @@ IMDB = is_enabled((environ.get('IMDB', "True")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), False)
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "<b><i>ᴛɪᴛʟᴇ:</b></i> <code>{file_name}</code>\n▬▬▬▬▬▬▬▬▬▬▬▬\n🍃<b><i>Movies Update Channel</b></i>🍃\n<i>@freakersmovie</i>\n🍃<b><i>Series Update Channel</b></i>🍃\n<i>@freakers_series</i>\n▬▬▬▬▬▬▬▬▬▬▬▬\n☘𝙅𝙤𝙞𝙣:-<b><i>https://t.me/freakersmovie</b></i>\n\n🧐𝙁𝙧𝙚𝙖𝙠𝙚𝙧𝙨🎭𝙁𝙞𝙡𝙢𝙮™🍿©\n100% ғᴀꜱᴛ & ϙᴜᴀʟɪᴛʏ\n▬▬▬▬▬▬▬▬▬▬▬▬")
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", "")
-IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "🎙 <i><b>ᴛɪᴛʟᴇ</i></b> : <a href={url}>{title}</a> \n🧭 <i><b>ʏᴇᴀʀ</i></b> : {release_date} \n🎯 <i><b>ʀᴀᴛɪɴɢ</i></b> : <a href={url}>IMDb</a>⭐️ {rating}/10 \n🎭 <i><b>ɢᴇɴʀᴇ</i></b> : {genres} \n📚 <i><b>ʟᴀɴɢᴜᴀɢᴇ</i></b> : {languages}\n\n🎊 <i><b>ᴘᴏᴡᴇʀᴇᴅ ʙʏ</i></b> : <i>[ғʀᴇᴀᴋᴇʀsғɪʟᴍʏ](https://t.me/freakersfilmy)</i>")
+IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<i><b>ᴛɪᴛʟᴇ</i></b>: <b><a href={url}>{title}</a> [{year}]</b>\n<i><b>ᴅᴜʀᴀᴛɪᴏɴ</i></b>:<i> {runtime} Mins</i>\n<i><b>ᴀʟsᴏ ᴋɴᴏᴡ ᴀs</i></b>:<i> {title}</i>\n<i><b>ʀᴀᴛɪɴɢ</i></b>: <b><a href={url}>IMDb</a></b>⭐️ <i>{rating}/10</i>\n<i><b>ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ</i></b>: <i>{release_date}</i> \n<i><b>ɢᴇɴʀᴇ</i></b> :<i> <a href={url}>{genres}</a></i> \n<i><b>ʟᴀɴɢᴜᴀɢᴇ</i></b>: <i>{languages}</i>\n<i><b>ᴄᴏᴜɴᴛʀʏ ᴏғ ᴏʀɪɢɪɴ</i></b>: <i>#{countries}</i>\n\n<i><b>sᴛᴏʀʏ ʟɪɴᴇ</i></b>: <i>{plot}</i>\n\n<i><b>ᴅɪʀᴇᴄᴛᴏʀs</i></b>: <i><a href={url}>{director}</a></i>\n<i><b>ᴡʀɪᴛᴇʀs </i></b>: <i><a href={url}>{writer}</a></i> \n\n<i><b>ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ</i></b> : <i>[ғʀᴇᴀᴋᴇʀsғɪʟᴍʏ](https://t.me/freakersfilmy)</i>\n☘𝙅𝙤𝙞𝙣: <i>https://t.me/freakersmovie</i>\n\n🧐𝙁𝙧𝙚𝙖𝙠𝙚𝙧𝙨🎭𝙁𝙞𝙡𝙢𝙮🍿\n  100% 𝑭𝒂𝒔𝒕 & 𝑸𝒖𝒂𝒍𝒊𝒕𝒚\n▬▬▬▬▬▬▬▬▬▬▬▬\n")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "True"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "False"), True)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
 INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
-FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '-1001855090915')).split()]
+FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '-1001855090915 -1001661137244')).split()]
 MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "True")), True)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
 PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "False")), True)
